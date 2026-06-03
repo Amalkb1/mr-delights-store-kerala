@@ -78,6 +78,10 @@ type Ctx = {
   clearCart: () => void;
   cartCount: number;
 
+  wishlist: string[];
+  toggleWishlist: (id: string) => void;
+  isWishlisted: (id: string) => boolean;
+
   user: User | null;
   users: User[];
   register: (u: User) => boolean;
