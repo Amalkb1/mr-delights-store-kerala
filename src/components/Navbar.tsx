@@ -20,6 +20,7 @@ export default function Navbar() {
   const { cartCount, user, wishlist } = useStore();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const mounted = useMounted();
   const path = useRouterState({ select: (s) => s.location.pathname });
 
   useEffect(() => {
