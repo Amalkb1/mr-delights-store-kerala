@@ -158,7 +158,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
   const addOrder: Ctx["addOrder"] = (o) => setOrders([o, ...orders]);
 
   const adminLogin: Ctx["adminLogin"] = (u, p) => {
-    if (u === "admin" && p === "admin123") { setIsAdmin(true); return true; }
+    if (u.trim().toLowerCase() === "admin" && p.trim() === "admin123") { setIsAdmin(true); return true; }
     return false;
   };
   const adminLogout = () => setIsAdmin(false);
