@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useStore, type Product } from "@/lib/store";
 import { toast } from "sonner";
 import { Pencil, Trash2, Plus, X, LogOut } from "lucide-react";
@@ -11,12 +11,21 @@ export const Route = createFileRoute("/admin")({
 
 const empty = { name: "", category: "Dates", price: 0, oldPrice: undefined as number | undefined, description: "", weight: "500g", image: "", stock: true, popularity: 50 };
 
+function useMounted() {
+  const [m, setM] = useState(false);
+  useEffect(() => setM(true), []);
+  return m;
+}
+
 function Admin() {
   const { isAdmin, adminLogin, adminLogout, products, addProduct, updateProduct, deleteProduct } = useStore();
+  const mounted = useMounted();
   const [creds, setCreds] = useState({ u: "", p: "" });
   const [editing, setEditing] = useState<Product | null>(null);
   const [creating, setCreating] = useState(false);
   const [form, setForm] = useState<typeof empty>(empty);
+
+  if (!mounted) return null;
 
   if (!isAdmin) {
     return (
