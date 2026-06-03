@@ -38,6 +38,12 @@ function Login() {
         <p className="mt-5 text-sm text-center text-muted-foreground">
           New here? <Link to="/register" className="text-accent hover:underline">Create an account</Link>
         </p>
+        <div className="mt-4 p-3 rounded-xl bg-[#0B3D2E]/10 border border-[#0B3D2E]/20">
+          <p className="text-xs text-center text-[#0B3D2E] font-medium">
+            Admin panel at <Link to="/admin" className="underline hover:text-[#D4AF37]">/admin</Link>
+            <span className="block mt-1 text-[10px] opacity-70">Try: admin / admin123</span>
+          </p>
+        </div>
       </div>
     </div>
   );
