@@ -32,6 +32,12 @@ export default function ProductCard({ product }: { product: Product }) {
             aria-label="Quick view">
             <Eye className="w-4 h-4 text-primary" />
           </button>
+          <button
+            onClick={() => { toggleWishlist(product.id); toast.success(wished ? "Removed from wishlist" : "Added to wishlist"); }}
+            className={`absolute top-3 right-3 w-9 h-9 rounded-full grid place-items-center transition ${wished ? "bg-accent text-accent-foreground" : "glass text-primary hover:bg-accent hover:text-accent-foreground"}`}
+            aria-label="Toggle wishlist">
+            <Heart className={`w-4 h-4 ${wished ? "fill-current" : ""}`} />
+          </button>
         </div>
         <div className="p-4 flex-1 flex flex-col">
           <div className="text-[10px] uppercase tracking-[0.2em] text-accent font-medium">{product.category}</div>
