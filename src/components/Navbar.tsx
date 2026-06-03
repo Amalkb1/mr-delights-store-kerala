@@ -10,6 +10,12 @@ const links = [
   { to: "/contact", label: "Contact" },
 ];
 
+function useMounted() {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+  return mounted;
+}
+
 export default function Navbar() {
   const { cartCount, user, wishlist } = useStore();
   const [open, setOpen] = useState(false);
