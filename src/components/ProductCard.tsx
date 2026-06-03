@@ -1,13 +1,14 @@
 import { Link } from "@tanstack/react-router";
-import { Eye, ShoppingBag } from "lucide-react";
+import { Eye, ShoppingBag, Heart } from "lucide-react";
 import { useState } from "react";
 import { useStore, type Product } from "@/lib/store";
 import { toast } from "sonner";
 import QuickView from "./QuickView";
 
 export default function ProductCard({ product }: { product: Product }) {
-  const { addToCart } = useStore();
+  const { addToCart, toggleWishlist, isWishlisted } = useStore();
   const [quick, setQuick] = useState(false);
+  const wished = isWishlisted(product.id);
   const off = product.oldPrice ? Math.round(100 - (product.price / product.oldPrice) * 100) : 0;
 
   return (
