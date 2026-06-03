@@ -60,7 +60,7 @@ export default function Navbar() {
         <div className="flex items-center gap-2 sm:gap-3">
           <Link to="/wishlist" className="relative p-2 rounded-full hover:bg-secondary transition" aria-label="Wishlist">
             <Heart className="w-5 h-5 text-primary" />
-            {wishlist.length > 0 && (
+            {mounted && wishlist.length > 0 && (
               <span className="absolute -top-1 -right-1 bg-accent text-accent-foreground text-[10px] font-bold w-5 h-5 grid place-items-center rounded-full shadow">
                 {wishlist.length}
               </span>
@@ -71,7 +71,7 @@ export default function Navbar() {
           </Link>
           <Link to="/cart" className="relative p-2 rounded-full hover:bg-secondary transition" aria-label="Cart">
             <ShoppingBag className="w-5 h-5 text-primary" />
-            {cartCount > 0 && (
+            {mounted && cartCount > 0 && (
               <span className="absolute -top-1 -right-1 bg-accent text-accent-foreground text-[10px] font-bold w-5 h-5 grid place-items-center rounded-full shadow">
                 {cartCount}
               </span>
