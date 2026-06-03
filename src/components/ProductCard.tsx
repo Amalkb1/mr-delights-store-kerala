@@ -1,13 +1,14 @@
 import { Link } from "@tanstack/react-router";
-import { Eye, ShoppingBag } from "lucide-react";
+import { Eye, ShoppingBag, Heart } from "lucide-react";
 import { useState } from "react";
 import { useStore, type Product } from "@/lib/store";
 import { toast } from "sonner";
 import QuickView from "./QuickView";
 
 export default function ProductCard({ product }: { product: Product }) {
-  const { addToCart } = useStore();
+  const { addToCart, toggleWishlist, isWishlisted } = useStore();
   const [quick, setQuick] = useState(false);
+  const wished = isWishlisted(product.id);
   const off = product.oldPrice ? Math.round(100 - (product.price / product.oldPrice) * 100) : 0;
 
   return (
@@ -24,12 +25,18 @@ export default function ProductCard({ product }: { product: Product }) {
             </span>
           )}
           {!product.stock && (
-            <span className="absolute top-3 right-3 bg-destructive text-destructive-foreground text-xs px-3 py-1 rounded-full">Out</span>
+            <span className="absolute bottom-3 left-3 bg-destructive text-destructive-foreground text-xs px-3 py-1 rounded-full">Out</span>
           )}
           <button onClick={() => setQuick(true)}
             className="absolute bottom-3 right-3 w-10 h-10 rounded-full glass grid place-items-center opacity-0 group-hover:opacity-100 transition-all translate-y-2 group-hover:translate-y-0"
             aria-label="Quick view">
             <Eye className="w-4 h-4 text-primary" />
+          </button>
+          <button
+            onClick={() => { toggleWishlist(product.id); toast.success(wished ? "Removed from wishlist" : "Added to wishlist"); }}
+            className={`absolute top-3 right-3 w-9 h-9 rounded-full grid place-items-center transition ${wished ? "bg-accent text-accent-foreground" : "glass text-primary hover:bg-accent hover:text-accent-foreground"}`}
+            aria-label="Toggle wishlist">
+            <Heart className={`w-4 h-4 ${wished ? "fill-current" : ""}`} />
           </button>
         </div>
         <div className="p-4 flex-1 flex flex-col">

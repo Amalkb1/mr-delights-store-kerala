@@ -78,6 +78,10 @@ type Ctx = {
   clearCart: () => void;
   cartCount: number;
 
+  wishlist: string[];
+  toggleWishlist: (id: string) => void;
+  isWishlisted: (id: string) => boolean;
+
   user: User | null;
   users: User[];
   register: (u: User) => boolean;
@@ -102,6 +106,12 @@ export function StoreProvider({ children }: { children: ReactNode }) {
   const [users, setUsers] = useLocal<User[]>("mr_users", []);
   const [orders, setOrders] = useLocal<Order[]>("mr_orders", []);
   const [isAdmin, setIsAdmin] = useLocal<boolean>("mr_admin", false);
+  const [wishlist, setWishlist] = useLocal<string[]>("mr_wishlist", []);
+
+  const toggleWishlist: Ctx["toggleWishlist"] = (id) => {
+    setWishlist(wishlist.includes(id) ? wishlist.filter(x => x !== id) : [...wishlist, id]);
+  };
+  const isWishlisted: Ctx["isWishlisted"] = (id) => wishlist.includes(id);
 
   const addProduct: Ctx["addProduct"] = (p) => {
     setProducts([...products, { ...p, id: "p" + Date.now(), createdAt: Date.now() }]);
@@ -157,6 +167,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     <StoreContext.Provider value={{
       products, setProducts, addProduct, updateProduct, deleteProduct,
       cart, addToCart, removeFromCart, setQty, clearCart, cartCount,
+      wishlist, toggleWishlist, isWishlisted,
       user, users, register, login, logout, updateUser,
       orders, addOrder,
       isAdmin, adminLogin, adminLogout,

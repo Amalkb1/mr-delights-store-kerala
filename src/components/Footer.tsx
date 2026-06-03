@@ -37,9 +37,9 @@ export default function Footer() {
         <div>
           <h4 className="text-sm uppercase tracking-[0.2em] text-accent mb-4">Reach Us</h4>
           <ul className="space-y-3 text-sm">
-            <li className="flex items-center gap-2"><Phone className="w-4 h-4 text-accent" /> +91 82898 42739</li>
-            <li className="flex items-center gap-2"><Mail className="w-4 h-4 text-accent" /> hello@mrdelights.in</li>
-            <li className="flex items-center gap-2"><MapPin className="w-4 h-4 text-accent" /> Kerala, India</li>
+            <li className="flex items-center gap-2"><Phone className="w-4 h-4 text-accent" /><span>+91 82898 42739</span></li>
+            <li className="flex items-center gap-2"><Mail className="w-4 h-4 text-accent" /><span>hello@mrdelights.in</span></li>
+            <li className="flex items-center gap-2"><MapPin className="w-4 h-4 text-accent" /><span>Kerala, India</span></li>
             <li>
               <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noreferrer"
                  className="inline-flex items-center gap-2 mt-2 px-4 py-2 rounded-full bg-accent text-accent-foreground font-medium hover:opacity-90 transition">
