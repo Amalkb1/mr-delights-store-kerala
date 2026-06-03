@@ -1,5 +1,5 @@
 import { Link, useRouterState } from "@tanstack/react-router";
-import { ShoppingBag, User, Menu, X } from "lucide-react";
+import { ShoppingBag, User, Menu, X, Heart } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useStore } from "@/lib/store";
 
@@ -11,7 +11,7 @@ const links = [
 ];
 
 export default function Navbar() {
-  const { cartCount, user } = useStore();
+  const { cartCount, user, wishlist } = useStore();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const path = useRouterState({ select: (s) => s.location.pathname });
