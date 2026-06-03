@@ -167,6 +167,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     <StoreContext.Provider value={{
       products, setProducts, addProduct, updateProduct, deleteProduct,
       cart, addToCart, removeFromCart, setQty, clearCart, cartCount,
+      wishlist, toggleWishlist, isWishlisted,
       user, users, register, login, logout, updateUser,
       orders, addOrder,
       isAdmin, adminLogin, adminLogout,
