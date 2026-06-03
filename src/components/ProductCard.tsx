@@ -25,7 +25,7 @@ export default function ProductCard({ product }: { product: Product }) {
             </span>
           )}
           {!product.stock && (
-            <span className="absolute top-3 right-3 bg-destructive text-destructive-foreground text-xs px-3 py-1 rounded-full">Out</span>
+            <span className="absolute bottom-3 left-3 bg-destructive text-destructive-foreground text-xs px-3 py-1 rounded-full">Out</span>
           )}
           <button onClick={() => setQuick(true)}
             className="absolute bottom-3 right-3 w-10 h-10 rounded-full glass grid place-items-center opacity-0 group-hover:opacity-100 transition-all translate-y-2 group-hover:translate-y-0"
