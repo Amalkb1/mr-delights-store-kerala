@@ -132,10 +132,14 @@
     color: transparent;
   }
   .luxury-card {
-    background: var(--color-card);
+    background: color-mix(in oklab, var(--green) 60%, transparent);
+    border: 1px solid color-mix(in oklab, var(--gold) 30%, transparent);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-radius: var(--radius-xl);
     box-shadow: var(--shadow-soft);
-    transition: transform .35s ease, box-shadow .35s ease;
+    color: var(--gold);
+    transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
   }
   .luxury-card:hover {
     transform: translateY(-6px);
