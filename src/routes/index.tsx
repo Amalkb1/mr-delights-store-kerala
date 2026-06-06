@@ -65,7 +65,7 @@ function HomePage() {
                 Shop Now
               </Link>
               <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noreferrer"
-                 className="px-7 py-3.5 rounded-full glass-dark text-primary-foreground font-medium inline-flex items-center gap-2 hover:bg-primary/60 transition text-amber-300">
+                 className="px-7 py-3.5 rounded-full glass-dark text-primary-foreground font-medium inline-flex items-center gap-2 hover:bg-primary/60 transition text-amber-400">
                 <MessageCircle className="w-4 h-4" /> Order on WhatsApp
               </a>
             </div>
