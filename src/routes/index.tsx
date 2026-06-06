@@ -61,11 +61,11 @@ function HomePage() {
               Experience purity, freshness, and luxury in every bite — hand-picked from the world's finest origins.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link to="/shop" className="px-7 py-3.5 rounded-full bg-[var(--gradient-gold)] text-accent-foreground font-medium shadow-[var(--shadow-gold)] hover:scale-105 transition text-amber-200">
+              <Link to="/shop" className="px-7 py-3.5 rounded-full bg-[var(--gradient-gold)] text-accent-foreground font-medium shadow-[var(--shadow-gold)] hover:scale-105 transition text-amber-200 bg-emerald-950">
                 Shop Now
               </Link>
               <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noreferrer"
-                 className="px-7 py-3.5 rounded-full glass-dark text-primary-foreground font-medium inline-flex items-center gap-2 hover:bg-primary/60 transition">
+                 className="px-7 py-3.5 rounded-full glass-dark text-primary-foreground font-medium inline-flex items-center gap-2 hover:bg-primary/60 transition text-amber-300">
                 <MessageCircle className="w-4 h-4" /> Order on WhatsApp
               </a>
             </div>
