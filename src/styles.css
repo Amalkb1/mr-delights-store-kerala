@@ -105,21 +105,25 @@
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
   }
-  h1, h2, h3, h4, h5 { font-family: var(--font-display); letter-spacing: -0.02em; }
+  h1, h2, h3, h4, h5 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+    color: var(--gold);
+  }
 }
 
 @layer components {
   .glass {
-    background: color-mix(in oklab, white 70%, transparent);
+    background: color-mix(in oklab, var(--green) 60%, transparent);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
-    border: 1px solid color-mix(in oklab, var(--gold) 25%, transparent);
+    border: 1px solid color-mix(in oklab, var(--gold) 35%, transparent);
   }
   .glass-dark {
-    background: color-mix(in oklab, var(--green) 75%, transparent);
+    background: color-mix(in oklab, var(--green) 80%, transparent);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
-    border: 1px solid color-mix(in oklab, var(--gold) 30%, transparent);
+    border: 1px solid color-mix(in oklab, var(--gold) 35%, transparent);
   }
   .gold-text {
     background: var(--gradient-gold);
