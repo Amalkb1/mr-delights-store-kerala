@@ -61,7 +61,7 @@ function HomePage() {
               Experience purity, freshness, and luxury in every bite — hand-picked from the world's finest origins.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link to="/shop" className="px-7 py-3.5 rounded-full bg-[var(--gradient-gold)] text-accent-foreground font-medium shadow-[var(--shadow-gold)] hover:scale-105 transition">
+              <Link to="/shop" className="px-7 py-3.5 rounded-full bg-[var(--gradient-gold)] text-accent-foreground font-medium shadow-[var(--shadow-gold)] hover:scale-105 transition text-amber-200">
                 Shop Now
               </Link>
               <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noreferrer"
