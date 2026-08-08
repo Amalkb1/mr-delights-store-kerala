@@ -47,34 +47,7 @@ function HomePage() {
   return (
     <>
       {/* HERO */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0">
-          <img src={heroImg} alt="Premium dates and nuts" className="w-full h-full object-cover" width={1600} height={1200} />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-primary/40" />
-        </div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-20 sm:py-32 text-primary-foreground">
-          <div className="max-w-2xl animate-fade-up">
-            <img src={logoAsset.url} alt="MR Delights emblem" width={120} height={120}
-              className="w-24 h-24 sm:w-28 sm:h-28 rounded-full object-cover ring-1 ring-accent/50 shadow-[var(--shadow-gold)]" />
-            <span className="mt-6 inline-block text-[10px] sm:text-xs tracking-[0.35em] uppercase text-accent border border-accent/40 rounded-full px-4 py-1.5">Premium Dry Fruits & Seeds</span>
-            <h1 className="mt-5 text-4xl sm:text-5xl md:text-6xl leading-[1.05]">
-              Premium Dates & Nuts <br /><span className="gold-text">Delivered Across Kerala</span>
-            </h1>
-            <p className="mt-6 text-base sm:text-lg text-primary-foreground/85 max-w-xl">
-              Experience purity, freshness, and luxury in every bite — hand-picked from the world's finest origins.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link to="/shop" style={{ backgroundImage: "var(--gradient-gold)" }} className="px-7 py-3.5 rounded-full text-accent-foreground font-semibold shadow-[var(--shadow-gold)] hover:scale-105 transition">
-                Shop Now
-              </Link>
-              <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noreferrer"
-                 className="px-7 py-3.5 rounded-full glass-dark text-accent font-medium inline-flex items-center gap-2 hover:bg-primary/60 transition">
-                <MessageCircle className="w-4 h-4" /> Order on WhatsApp
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      <AnimatedLogoHero />
 
       {/* TRUST BADGES */}
       <section className="border-y border-border bg-card">
