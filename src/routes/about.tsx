@@ -45,7 +45,7 @@ function About() {
           { icon: ShieldCheck, t: "Trusted", d: "Loved across Kerala." },
         ].map(v => (
           <div key={v.t} className="luxury-card p-6 text-center">
-            <div className="w-12 h-12 rounded-full bg-[var(--gradient-gold)] grid place-items-center mx-auto"><v.icon className="w-6 h-6 text-accent-foreground" /></div>
+            <div className="w-12 h-12 rounded-full bg-gold-grad grid place-items-center mx-auto"><v.icon className="w-6 h-6 text-accent-foreground" /></div>
             <div className="mt-4 font-display text-xl">{v.t}</div>
             <div className="text-sm text-muted-foreground mt-1">{v.d}</div>
           </div>

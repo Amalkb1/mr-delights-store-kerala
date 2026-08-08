@@ -136,6 +136,10 @@
   }
 }
 
+@utility bg-gold-grad {
+  background-image: var(--gradient-gold);
+}
+
 @keyframes fade-up {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
