@@ -8,7 +8,7 @@ import { useStore } from "@/lib/store";
 import ProductCard from "@/components/ProductCard";
 import { Leaf, Award, Sparkles, Truck, Star, MessageCircle, Phone, Mail, MapPin } from "lucide-react";
 import { WHATSAPP_NUMBER } from "@/lib/store";
-import logoAsset from "@/assets/mr-delights-logo.png.asset.json";
+import AnimatedLogoHero from "@/components/AnimatedLogoHero";
 
 export const Route = createFileRoute("/")({
   head: () => ({
