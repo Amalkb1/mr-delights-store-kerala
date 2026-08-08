@@ -1,17 +1,20 @@
 import { Link } from "@tanstack/react-router";
 import { Phone, Mail, MapPin, MessageCircle } from "lucide-react";
 import { WHATSAPP_NUMBER } from "@/lib/store";
+import logoAsset from "@/assets/mr-delights-logo.png.asset.json";
 
 export default function Footer() {
   return (
     <footer className="mt-24 bg-primary text-primary-foreground">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-14 grid gap-10 md:grid-cols-4">
         <div>
-          <div className="flex items-center gap-2">
-            <div className="w-10 h-10 rounded-full bg-[var(--gradient-gold)] grid place-items-center">
-              <span className="font-display text-primary text-lg">M</span>
+          <div className="flex items-center gap-3">
+            <img src={logoAsset.url} alt="MR Delights logo" width={56} height={56}
+              className="w-14 h-14 shrink-0 rounded-full object-cover ring-1 ring-accent/40" />
+            <div className="min-w-0">
+              <div className="font-display text-xl truncate">MR Delights</div>
+              <div className="text-[10px] tracking-[0.22em] uppercase text-accent">Premium Dry Fruits & Seeds</div>
             </div>
-            <div className="font-display text-xl">MR Delights</div>
           </div>
           <p className="mt-4 text-sm text-primary-foreground/70 leading-relaxed">
             Premium dates, nuts, figs & seeds — sourced with care, delivered across Kerala.

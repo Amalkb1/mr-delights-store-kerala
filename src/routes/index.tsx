@@ -8,6 +8,7 @@ import { useStore } from "@/lib/store";
 import ProductCard from "@/components/ProductCard";
 import { Leaf, Award, Sparkles, Truck, Star, MessageCircle, Phone, Mail, MapPin } from "lucide-react";
 import { WHATSAPP_NUMBER } from "@/lib/store";
+import logoAsset from "@/assets/mr-delights-logo.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -51,21 +52,23 @@ function HomePage() {
           <img src={heroImg} alt="Premium dates and nuts" className="w-full h-full object-cover" width={1600} height={1200} />
           <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-primary/40" />
         </div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-24 sm:py-36 text-primary-foreground">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-20 sm:py-32 text-primary-foreground">
           <div className="max-w-2xl animate-fade-up">
-            <span className="inline-block text-xs tracking-[0.3em] uppercase text-accent border border-accent/40 rounded-full px-4 py-1.5">Luxury · Kerala</span>
-            <h1 className="mt-6 text-4xl sm:text-5xl md:text-6xl leading-[1.05]">
+            <img src={logoAsset.url} alt="MR Delights emblem" width={120} height={120}
+              className="w-24 h-24 sm:w-28 sm:h-28 rounded-full object-cover ring-1 ring-accent/50 shadow-[var(--shadow-gold)]" />
+            <span className="mt-6 inline-block text-[10px] sm:text-xs tracking-[0.35em] uppercase text-accent border border-accent/40 rounded-full px-4 py-1.5">Premium Dry Fruits & Seeds</span>
+            <h1 className="mt-5 text-4xl sm:text-5xl md:text-6xl leading-[1.05]">
               Premium Dates & Nuts <br /><span className="gold-text">Delivered Across Kerala</span>
             </h1>
             <p className="mt-6 text-base sm:text-lg text-primary-foreground/85 max-w-xl">
               Experience purity, freshness, and luxury in every bite — hand-picked from the world's finest origins.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link to="/shop" className="px-7 py-3.5 rounded-full bg-[var(--gradient-gold)] text-accent-foreground font-medium shadow-[var(--shadow-gold)] hover:scale-105 transition text-amber-200 bg-emerald-950">
+              <Link to="/shop" style={{ backgroundImage: "var(--gradient-gold)" }} className="px-7 py-3.5 rounded-full text-accent-foreground font-semibold shadow-[var(--shadow-gold)] hover:scale-105 transition">
                 Shop Now
               </Link>
               <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noreferrer"
-                 className="px-7 py-3.5 rounded-full glass-dark text-primary-foreground font-medium inline-flex items-center gap-2 hover:bg-primary/60 transition text-amber-300 bg-emerald-950">
+                 className="px-7 py-3.5 rounded-full glass-dark text-accent font-medium inline-flex items-center gap-2 hover:bg-primary/60 transition">
                 <MessageCircle className="w-4 h-4" /> Order on WhatsApp
               </a>
             </div>
@@ -78,7 +81,7 @@ function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 grid grid-cols-2 md:grid-cols-4 gap-4">
           {trust.map(t => (
             <div key={t.label} className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-[var(--gradient-gold)] grid place-items-center shadow">
+              <div className="w-10 h-10 rounded-full bg-gold-grad grid place-items-center shadow">
                 <t.icon className="w-5 h-5 text-accent-foreground" />
               </div>
               <span className="text-sm font-medium">{t.label}</span>

@@ -20,7 +20,7 @@ export default function ProductCard({ product }: { product: Product }) {
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
           </Link>
           {off > 0 && (
-            <span className="absolute top-3 left-3 bg-[var(--gradient-gold)] text-accent-foreground text-xs font-bold px-3 py-1 rounded-full shadow">
+            <span className="absolute top-3 left-3 bg-gold-grad text-accent-foreground text-xs font-bold px-3 py-1 rounded-full shadow">
               -{off}%
             </span>
           )}
