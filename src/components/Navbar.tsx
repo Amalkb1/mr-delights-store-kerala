@@ -2,6 +2,7 @@ import { Link, useRouterState } from "@tanstack/react-router";
 import { ShoppingBag, User, Menu, X, Heart } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useStore } from "@/lib/store";
+import logoAsset from "@/assets/mr-delights-logo.png.asset.json";
 
 const links = [
   { to: "/", label: "Home" },
@@ -35,13 +36,12 @@ export default function Navbar() {
   return (
     <header className={`sticky top-0 z-50 transition-all ${scrolled ? "glass shadow-[0_4px_30px_-12px_oklch(0.295_0.06_158/0.2)]" : "bg-background/60 backdrop-blur"}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2 group">
-          <div className="w-10 h-10 rounded-full bg-[var(--gradient-luxury)] grid place-items-center shadow-[var(--shadow-gold)]">
-            <span className="font-display text-gold text-lg">M</span>
-          </div>
-          <div className="leading-tight">
-            <div className="font-display text-lg sm:text-xl text-primary">MR Delights</div>
-            <div className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground">Premium · Kerala</div>
+        <Link to="/" className="flex min-w-0 items-center gap-2.5 group">
+          <img src={logoAsset.url} alt="MR Delights logo" width={44} height={44}
+            className="w-10 h-10 sm:w-11 sm:h-11 shrink-0 rounded-full object-cover ring-1 ring-accent/40 shadow-[var(--shadow-gold)] transition-transform duration-500 group-hover:rotate-3" />
+          <div className="leading-tight min-w-0">
+            <div className="font-display text-lg sm:text-xl text-primary truncate">MR Delights</div>
+            <div className="text-[9px] sm:text-[10px] tracking-[0.24em] uppercase text-muted-foreground truncate">Premium Dry Fruits & Seeds</div>
           </div>
         </Link>
 
